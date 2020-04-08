@@ -12,7 +12,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/testdb
     username: postgres
-    password: QTJQODRJYVNIcw==
+    password: EnterYourPassword
 
   jpa:
     show-sql: false
