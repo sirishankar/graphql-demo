@@ -1,0 +1,25 @@
+server:
+  apiContext:
+  versionContext: v
+  port: 9000
+  servlet:
+    context-path: /graphql-demo
+
+spring:
+  application:
+    name: Graphql Demo
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/testdb
+    username: postgres
+    password: QTJQODRJYVNIcw==
+
+  jpa:
+    show-sql: false
+
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+    hibernate:
+      dialect: org.hibernate.dialect.SQKLServer2016Dialect

@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "ec9229d6-1513-461a-bdb4-fcb05427ec5d",
+		"name": "graphql",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "recent posts - return posts & author",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "text/plain",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\n    recentPosts(count: 10, offset: 0) {\n        id\n        title\n        category\n        author {\n            id\n            name\n            thumbnail\n        }\n    }\n}",
+						"variables": ""
+					},
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/graphql-demo/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"graphql-demo",
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "recent posts - return only posts ",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "text/plain",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\n    recentPosts(count: 10, offset: 0) {\n        id\n        title\n        category\n    }\n}",
+						"variables": ""
+					},
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/graphql-demo/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"graphql-demo",
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all posts",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\n    allPosts{\n        id\n        title\n        category\n        author {\n            id\n            name\n            thumbnail\n        }\n    }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/graphql-demo/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"graphql-demo",
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pod by id = \"Post00\"",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\n    byPostId(id: \"Post00\"){\n        id\n        title\n        category\n        author {\n            id\n            name\n            thumbnail\n        }\n    }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/graphql-demo/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"graphql-demo",
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
